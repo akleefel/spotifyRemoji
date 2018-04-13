@@ -51,7 +51,9 @@ artist_popularity <- function(user_auth_token, artist1, artist2, artist3){
           axis.title.x = element_text(colour = "white"),
           axis.title.y = element_text(colour = "white"),
           axis.text.x = element_text(colour = "white"),
-          axis.text.y = element_text(colour = "white")) +
+          axis.text.y = element_text(colour = "white"),
+          panel.grid = element_blank(),
+          panel.border = element_blank()) +
     labs(x = "Artist", y = "Popularity")
 }
 
