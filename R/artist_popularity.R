@@ -1,8 +1,9 @@
-library(httr)
-library(ggplot2)
-library(dplyr)
 
-compare_artists <- function(user_auth_token, artist1, artist2, artist3){
+## This function takes in a user authentication token and three artists, and returns a ggplot showing
+## the popularity (out of 100) and the genre of each artist respectively.
+
+
+artist_popularity <- function(user_auth_token, artist1, artist2, artist3){
 
   #artist 1 GET
   artistName1 = artist1
@@ -28,15 +29,15 @@ compare_artists <- function(user_auth_token, artist1, artist2, artist3){
   response3 <-  GET(url = URI3, add_headers(Authorization = HeaderValue))
   Artist3 <-  content(response3)
 
-  pop <- c(Artist$artists$items[[1]]$popularity,
+  pop <- c(Artist1$artists$items[[1]]$popularity,
            Artist2$artists$items[[1]]$popularity,
            Artist3$artists$items[[1]]$popularity)
 
-  genre <- c(Artist$artists$items[[1]]$genres[[1]],
+  genre <- c(Artist1$artists$items[[1]]$genres[[1]],
              Artist2$artists$items[[1]]$genres[[1]],
              Artist3$artists$items[[1]]$genres[[1]])
 
-  artist_name <- c(Artist$artists$items[[1]]$name,
+  artist_name <- c(Artist1$artists$items[[1]]$name,
                    Artist2$artists$items[[1]]$name,
                    Artist3$artists$items[[1]]$name)
 
@@ -44,7 +45,7 @@ compare_artists <- function(user_auth_token, artist1, artist2, artist3){
 
   ggplot(artist_df, aes(artist_name, pop)) +
     geom_col(fill = "#1ED760") +
-    geom_text(aes(label=genre, y=pop*0.5), colour="white", size=10) +
+    geom_text(aes(label=genre), position = position_stack(vjust = 0.5), colour="white", size=7) +
     theme(panel.background = element_rect(fill = "black"),
           plot.background = element_rect(fill = "black"),
           axis.title.x = element_text(colour = "white"),
@@ -53,3 +54,4 @@ compare_artists <- function(user_auth_token, artist1, artist2, artist3){
           axis.text.y = element_text(colour = "white")) +
     labs(x = "Artist", y = "Popularity")
 }
+
