@@ -20,7 +20,17 @@ This is an R wrapper for the Spotify API.
 
 Three main functions in `spotifyremoji `:
 
-- `function_name()`: 
+- `compare_artists(user_auth_token, artist1, artist2, artist3)`: 
+	- Produces a graph comparing the popularity of selected artists.
+	- Arguments:
+		- `user_auth_token`:  A string of a unique authentication token, which can be acquired using the steps listed below under *Authentication*.
+		- `artist1`,`artist2`,`artist3`: Three strings of the names of artists the user wishes to compare.
+	- Returns: 
+		- A `ggplot` output graph.
+	- Example of use:
+		- `compare_artists(my_token, 'vybz kartel’, 'candlemass', 'brockhampton')`
+		- Output:
+		- ![](figures/sample.png)   
 
 Additionally, we've built a helper function that generates data for the above functions:
 
@@ -89,4 +99,4 @@ DEMO
 [MIT License](https://github.com/akleefel/spotifyremoji/blob/master/LICENSE)
 
 ### Contributing
-This is an open source project. So feedback, suggestions and contributions are very welcome. For feedback and suggestions, please open an issue in this repo. If you are willing to contribute this package, please refer [Contributing](https://github.com/akleefel/spotifyremoji/blob/master/CONTRIBUTING.md) guidelines for details.
+This is an open source project. Therefore, feedback, suggestions, and contributions are very welcome. For feedback and suggestions, please open an issue in this repo. If you are willing to contribute this package, please refer to [Contributing](https://github.com/akleefel/spotifyremoji/blob/master/CONTRIBUTING.md) guidelines for details.
