@@ -8,7 +8,7 @@ compare_artists <- function(user_auth_token, artist1, artist2){
   #artist 1 GET
   artistName1 = artist1
 
-  HeaderValue = paste0('Bearer ', my_token)
+  HeaderValue = paste0('Bearer ', user_auth_token)
 
   URI1 <-paste0('https://api.spotify.com/v1/search?query=',artistName1,'&offset=0&limit=20&type=artist')
   response1 <-  GET(url = URI1, add_headers(Authorization = HeaderValue))
