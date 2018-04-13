@@ -23,8 +23,8 @@ Three main functions in `spotifyremoji `:
 - `compare_artists(user_auth_token, artist1, artist2, artist3)`: 
 	- Produces a graph comparing the popularity of selected artists.
 	- Arguments:
-		- `user_auth_token`: 
-		- `artist1`,`artist2`,`artist3`: Three strings 
+		- `user_auth_token`:  A string of a unique authentication token, which can be acquired using the steps listed below under *Authentication*.
+		- `artist1`,`artist2`,`artist3`: Three strings of the names of artists the user wishes to compare.
 	- Returns: 
 		- A `ggplot` output graph.
 	- Example of use:
