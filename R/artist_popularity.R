@@ -13,6 +13,9 @@
 #'
 #' @export
 
+library(httr)
+library(dplyr)
+library(ggplot2)
 
 artist_popularity <- function(user_auth_token, artist1, artist2, artist3){
 
