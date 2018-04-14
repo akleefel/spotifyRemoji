@@ -89,9 +89,9 @@ EXPLANATION
 ```
 library(spotifyremoji)
 
-
-DEMO
 ```
+
+Important: In order for the tests to run successfully, one must open `.Renviron` and update the `SPOTIFY_TOKEN` to an active working token. This can be referenced with the command `Sys.getenv("SPOTIFY_TOKEN")` 
 
 Words
 
