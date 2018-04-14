@@ -1,5 +1,6 @@
-context("artist_popularity test")
+context("artist_popularity")
 
+user_auth_token  <-  Sys.getenv("SPOTIFY_TOKEN")
 
 # Check that artist1 is not numeric
 test_that("non-numeric artist1?", {
