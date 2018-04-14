@@ -22,7 +22,6 @@
 
 
 
-
 get_top_artists_for_user <- function(user_auth_token, limit_num, time_range_opt) {
   # Ensure valid input types
   if (!is.character(user_auth_token)) {
@@ -58,16 +57,20 @@ get_top_artists_for_user <- function(user_auth_token, limit_num, time_range_opt)
       add_headers(c(Authorization = glue("Bearer ", auth_token))))
 
   # Ensure valid authentication
-  if (fromJSON(json_obj %>% content("text")) %>%
-      .[[1]] %>% .$message == "The access token expired") {
-    stop("AuthenticationError: The access token expired")}
+  if (!(length(fromJSON(json_obj %>% content("text")) %>%
+      .[[1]] %>% .$message) == 0)){
+    if (fromJSON(json_obj %>% content("text")) %>%
+        .[[1]] %>% .$message == "The access token expired") {
+      stop("AuthenticationError: The access token expired")}
 
-  if (fromJSON(json_obj %>% content("text")) %>%
-      .[[1]] %>% .$message == "Invalid access token") {
-    stop("AuthenticationError: Invalid access token")}
+    if (fromJSON(json_obj %>% content("text")) %>%
+        .[[1]] %>% .$message == "Invalid access token") {
+      stop("AuthenticationError: Invalid access token")}
 
-  if (!is.null(fromJSON(json_obj %>% content("text")) %>% .[[1]] %>% .$message)){
-    stop("AuthenticationError: Unidentified access token error")}
+    if (!is.null(fromJSON(json_obj %>% content("text")) %>% .[[1]] %>% .$message)){
+      stop("AuthenticationError: Unidentified access token error")}
+  }
+
 
 
 
