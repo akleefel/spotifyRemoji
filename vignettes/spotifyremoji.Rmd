@@ -14,7 +14,7 @@ vignette: |
 **spotifyremoji** is a package designed for working with the Spotify API. <br/>
 It provides an easy and guided experience for working with your Spotify data. As Spotify imposes restrictions on 
 who can access their API, only Spoitfy members/users will be able to get the authentication-token requried to make use
-of this package. 
+of this package. Instructions for how to generate an authentication-token can be found in the [ReadMe](README.md)
 
 The following functions are included:
 
@@ -26,11 +26,29 @@ The following functions are included:
 
 Install this package directly from GitHub:
 
-```{r message=FALSE}
+```{r install,  message=FALSE}
 devtools::install_github("akleefel/spotifyremoji")
 ```
 
 ## Usage
+
+```{r usage, message = FALSE}
+# load the package 
+library(spotifyremoji)
+
+# Obtain an authentication token by following the instructions in the README
+
+# compare artists (output ggplot)
+artist_popularity(my_token, 'vybz kartel', 'candlemass', 'brockhampton')
+
+
+# get related artists  (output dataframe)
+related_artists(my_token, 'Haftbefel')
+
+
+# get your top artists (output dataframe)
+get_top_artists_for_user(my_token, 50, 2)
+```
 
 
 
