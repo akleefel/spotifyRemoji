@@ -1,6 +1,17 @@
-
-## This function takes in a user authentication token and three artists, and returns a ggplot showing
-## the popularity (out of 100) and the genre of each artist respectively.
+#'  Compare artist popularity
+#'
+#' Use this function to compare the popularity and genre of 3 specified artists.
+#'
+#' @param user_auth_token string of a unique authentication token, which can be acquired using the steps listed below under Authentication.
+#' @param artist1 string with specified artist name
+#' @param artist2 string with specified artist name
+#' @param artist3 string with specified artist name
+#' @return  A ggplot object for easy visualization of the comparison
+#' @examples
+#' # compare brockhampton, candlemass and Vybz kartel
+#' artist_popularity(user_auth_token, "brockhampton", "candlemass", "vybz kartel")
+#'
+#' @export
 
 
 artist_popularity <- function(user_auth_token, artist1, artist2, artist3){
