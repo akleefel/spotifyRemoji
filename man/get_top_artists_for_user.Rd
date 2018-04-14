@@ -9,7 +9,7 @@ get_top_artists_for_user(user_auth_token, limit_num, time_range_opt)
 \arguments{
 \item{user_auth_token:}{a string corresponding to a valid Spotify API user authentication token}
 
-\item{limit_num:}{an integer between 1 and 50}
+\item{limit_num:}{an integer between 1 and 50 (inclusive)}
 
 \item{time_range_opt:}{an integer, either 1,2 or 3.
 1 = `long_term` is last several years of data
