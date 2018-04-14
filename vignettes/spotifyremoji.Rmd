@@ -12,15 +12,22 @@ vignette: |
 ## Overview
 
 **spotifyremoji** is a package designed for working with the Spotify API. <br/>
-It provides an easy and guided experience for working with your Spotify data. As Spotify imposes restrictions on 
+
+<br/>
+
+Our package provides an easy and guided experience for working with your Spotify data. As Spotify imposes restrictions on 
 who can access their API, only Spoitfy members/users will be able to get the authentication-token requried to make use
-of this package. Instructions for how to generate an authentication-token can be found in the [ReadMe](README.md)
+of this package. Instructions for how to generate an authentication-token can be found in the ReadMe document. 
+
+<br/>
 
 The following functions are included:
 
 * `artist_popularity()`: Compares the popularity and genre of three artists via a bar plot visualization. 
 * `related_artists()`:   Identifies related artists to a given input artist. Returns a dataframe containing artist names. 
 * `get_top_artists_for_user()`: Finds a users top artists over an input time range. Returns a dataframe containing summary information on each artist. 
+
+<br/>
 
 ## Installation
 
@@ -29,6 +36,8 @@ Install this package directly from GitHub:
 ```{r install,  message=FALSE}
 devtools::install_github("akleefel/spotifyremoji")
 ```
+
+<br/>
 
 ## Usage
 
