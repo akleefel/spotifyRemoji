@@ -47,16 +47,22 @@ Three main functions in `spotifyremoji `:
 
 			![](figures/hafti.JPG)
 
+- `get_top_artists_for_user(user_auth_token, limit_num, time_range_opt)`:
+	- Finds a users top artists over an input time range. Returns a dataframe containing summary information on each artist.
+	- Arguments:
+		- `user_auth_token`:  A string of a unique authentication token, which can be acquired using the steps listed below under *Authentication*.
+		- `limit_num`: An integer between 1 and 50 (inclusive), specifying the number of 'top artists' to return.  
+		- `time_range_opt`: an integer, either 1,2 or 3
+			- 1 = `long_term` is last several years of data
+			- 2 = `medium_term` is last 6 months
+			- 3 = `short_term` last 4 weeks
+		- Returns: A dataframe of artist names, popularity, genres, and followers corresponding to the top artists of a user.  
+		- Example of use:
+			- `get_top_artists_for_user(my_token, 50, 2)`
+			- Output:
 
-Additionally, we've built a helper function that generates data for the above functions:
+			![](figures/sample_top_artists.png)
 
-- `helper_function()`:   
-
-It can be used as follows:
-
-```
-DEMO!
-```
 
 ### Authentication
 
@@ -91,20 +97,8 @@ library(spotifyremoji)
 
 ```
 
-Important: In order for the tests to run successfully, one must open `.Renviron` and update the `SPOTIFY_TOKEN` to an active working token. This can be referenced with the command `Sys.getenv("SPOTIFY_TOKEN")` 
+Important: In order for the tests to run successfully, one must open `.Renviron` and update the `SPOTIFY_TOKEN` to an active working token. This can be referenced with the command `Sys.getenv("SPOTIFY_TOKEN")`. Once the `.Renviron` file has been updated a **new Rstudio session** must be started for it to update appropriately.  
 
-Words
-
-
-```
-DEMO
-```
-
-Words
-
-```
-DEMO
-```
 
 ### Similar packages
 

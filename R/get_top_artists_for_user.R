@@ -1,4 +1,4 @@
-#' get_top_artists_for_user: Get the top artists for the user
+#' get_top_artists_for_user: Finds a users top artists over an input time range. Returns a dataframe containing summary information on each artist.
 #' @importFrom glue httr jsonlite dplyr
 #'
 #' @param user_auth_token: a string corresponding to a valid Spotify API user authentication token
