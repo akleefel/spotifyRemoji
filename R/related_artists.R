@@ -27,6 +27,16 @@ library(glue)
 
 related_artists <- function(user_auth_token, artistName){
 
+  #raise error if one of the arguments is missing
+
+  if (user_auth_token == ""){
+    stop("Argument `user_auth_token` is missing")
+  }
+
+  if (artistName == ""){
+    stop("Argument `artistName` is missing")
+  }
+
 
   #replace spaces in artist name with +
   artistName <- gsub(" ", "+", artistName)
