@@ -26,8 +26,7 @@ test_that("Passing invalid authentication leads to empty dataframe",{
 
 
 
-
-#Test B
+#Test D
 test_that("Both arguments were passed", {
 
   expect_error(related_artists(user_auth_token = auth, artistName = ""), "One of 'user_auth_token' or 'artistName' is missing")
