@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_top_artists_for_user.R
 \name{get_top_artists_for_user}
 \alias{get_top_artists_for_user}
-\title{get_top_artists_for_user: Get the top artists for the user}
+\title{get_top_artists_for_user: Finds a users top artists over an input time range. Returns a dataframe containing summary information on each artist.}
 \usage{
 get_top_artists_for_user(user_auth_token, limit_num, time_range_opt)
 }
@@ -24,7 +24,7 @@ a dataframe of artist name, popularity, genres, and followers
      followers = integer of number of followers of artist
 }
 \description{
-get_top_artists_for_user: Get the top artists for the user
+get_top_artists_for_user: Finds a users top artists over an input time range. Returns a dataframe containing summary information on each artist.
 }
 \examples{
 my_auth_token <- "BQDk6Yebn4V94Cbd121Rs73_q4Vtx1WotIX7o3spa5THlzfZi1pQn-jywCkz2XNld5Pa1H3jxo7EGL8JZ-1_G28Sg5as5ZaBeIfKCngrvoT52sLhkUYbplpgk6_G7MIyByENCv32oJAR4txcWgI0j5Bewds-cvR8foos2fz71Xob"
